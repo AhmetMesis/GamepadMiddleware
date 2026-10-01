@@ -1,0 +1,9 @@
+{
+    "deadzone_left": 0.5,
+    "deadzone_right": 0.5,
+    "rgb_r": 245,
+    "rgb_g": 36,
+    "rgb_b": 36,
+    "rgb_mode": "rainbow",
+    "rgb_brightness": 31
+}

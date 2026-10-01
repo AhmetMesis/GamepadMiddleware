@@ -1,0 +1,5 @@
+pygame==2.5.2
+vgamepad==0.1.0
+fastapi
+uvicorn
+websockets

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamepad Studio Pro</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Gamepad <span>Studio Pro</span></h1>
+            <div class="status-indicator" id="statusIndicator">Sunucu Bekleniyor...</div>
+        </header>
+
+        <main class="dashboard">
+            <div class="panel visualization-panel">
+                <h2>Canlı Telemetri ve Analiz</h2>
+                <div class="controller-visual">
+                    <div class="stick-container">
+                        <div class="stick-label">Sol Analog (L)</div>
+                        <div class="stick-bound">
+                            <div class="stick-dot" id="leftStick"></div>
+                            <div class="crosshair-x"></div>
+                            <div class="crosshair-y"></div>
+                        </div>
+                        <div class="raw-values" id="leftStickVals">X: 0.00 | Y: 0.00</div>
+                    </div>
+                    
+                    <div class="trigger-container">
+                        <div class="trigger-label">L2 Tetik</div>
+                        <div class="trigger-bar">
+                            <div class="trigger-fill" id="leftTrigger"></div>
+                        </div>
+                        <div class="raw-values" id="leftTriggerVal">0.00</div>
+                    </div>
+
+                    <div class="trigger-container">
+                        <div class="trigger-label">R2 Tetik</div>
+                        <div class="trigger-bar">
+                            <div class="trigger-fill" id="rightTrigger"></div>
+                        </div>
+                        <div class="raw-values" id="rightTriggerVal">0.00</div>
+                    </div>
+
+                    <div class="stick-container">
+                        <div class="stick-label">Sağ Analog (R)</div>
+                        <div class="stick-bound">
+                            <div class="stick-dot" id="rightStick"></div>
+                            <div class="crosshair-x"></div>
+                            <div class="crosshair-y"></div>
+                        </div>
+                        <div class="raw-values" id="rightStickVals">X: 0.00 | Y: 0.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel config-panel">
+                <h2>Ölü Bölge (Deadzone) Ayarı</h2>
+                <p class="help-text" style="margin-top: 0; margin-bottom: 15px;">Yapılan ayarlar kalıcı olarak diske kaydedilir.</p>
+                <div class="setting-group">
+                    <label>Sol Analog Titreme Önleyici: <span id="ldVal">15%</span></label>
+                    <input type="range" id="leftDeadzone" min="0" max="50" value="15">
+                </div>
+                <div class="setting-group">
+                    <label>Sağ Analog Titreme Önleyici: <span id="rdVal">15%</span></label>
+                    <input type="range" id="rightDeadzone" min="0" max="50" value="15">
+                </div>
+            </div>
+
+            <div class="panel rumble-panel">
+                <h2>Titreşim (Rumble) Motorları</h2>
+                <div class="setting-group">
+                    <label>Ağır Motor (Sol): <span id="rumbleLowVal">50%</span></label>
+                    <input type="range" id="rumbleLow" min="0" max="100" value="50">
+                </div>
+                <div class="setting-group">
+                    <label>Hafif Motor (Sağ): <span id="rumbleHighVal">50%</span></label>
+                    <input type="range" id="rumbleHigh" min="0" max="100" value="50">
+                </div>
+                <button id="testRumbleBtn" class="premium-btn">Titreşimi Test Et</button>
+            </div>
+
+            <div class="panel buttons-panel" style="grid-column: 1 / 3;">
+                <h2>Aktif Tuş Sensörleri</h2>
+                <div class="buttons-grid" id="buttonsGrid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                    <!-- Javascript ile otomatik tuşlar eklenecek -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
